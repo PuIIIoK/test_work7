@@ -1,0 +1,124 @@
+.sliderContainer {
+    position: relative;
+    width: 100%;
+    margin: 0 auto 0 auto;
+    padding: 0;
+    overflow: visible;
+}
+
+.swiper {
+    padding: 20px 0;
+    overflow: visible;
+    margin-bottom: 40px;
+
+    :global(.swiper-wrapper) {
+        align-items: stretch;
+        margin-bottom: 40px;
+    }
+
+    :global(.swiper-slide) {
+        height: auto;
+        display: flex;
+        width: auto !important;
+        flex-shrink: 0;
+    }
+}
+
+.navigation {
+    position: absolute;
+    bottom: -70px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    background: #FFFFFF;
+    border-radius: 15px;
+    box-shadow: 0px 43px 34px -25.87px rgba(15, 15, 15, 0.12);
+    padding: 12px 24px;
+    gap: 20px;
+    z-index: 10;
+}
+
+.navButton {
+    width: auto;
+    min-width: 40px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 0;
+    padding: 0 16px;
+    text-shadow:
+        0.6px 0 0 currentColor,
+        -0.6px 0 0 currentColor,
+        0 0.6px 0 currentColor,
+        0 -0.6px 0 currentColor;
+
+    &:first-child::after {
+        content: '';
+        position: absolute;
+        right: -10px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1px;
+        height: 16px;
+        background: #e0e0e0;
+    }
+
+    &:hover {
+        background: rgba(0, 0, 0, 0.05);
+        border-radius: 12px;
+    }
+
+    &.swiper-button-disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+    }
+}
+
+.navPrev {
+    margin-left: -24px;
+}
+
+.navNext {
+    margin-right: -24px;
+}
+
+@media (max-width: 768px) {
+    .sliderContainer {
+        padding: 0 20px;
+    }
+
+    .navigation {
+        padding: 12px 20px;
+        gap: 20px;
+        border-radius: 14px;
+    }
+
+    .navButton {
+        min-width: 32px;
+        height: 20px;
+        font-size: 12px;
+        padding: 0 8px;
+    }
+
+    .navPrev {
+        margin-left: -16px;
+    }
+
+    .navNext {
+        margin-right: -16px;
+    }
+
+    .navButton:first-child::after {
+        right: -8px;
+        height: 12px;
+    }
+}
